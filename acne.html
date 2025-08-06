@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acne Treatment</title>
+  <!-- ✅ Font Awesome CDN added -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .acne-section {
+      background-color: #00a8e8; /* blue background */
+      padding: 40px 0;
+    }
+
+    .acne-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .acne-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .acne-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .acne-content {
+      flex: 1;
+      padding: 20px 40px;
+    }
+
+    .acne-content h2 {
+      font-size: 32px;
+      color: #002b5b;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .acne-content p {
+      color: #333;
+      line-height: 1.7;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .acne-content p strong {
+      font-weight: 600;
+    }
+
+    .acne-type-section {
+      position: relative;
+      padding: 60px 40px;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .bg-text {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 80px;
+      font-weight: 800;
+      color: #eaeaea;
+      z-index: 0;
+    }
+
+    .acne-type-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .acne-type-text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 40px;
+    }
+
+    .acne-type-text h2 {
+      color: #0096db;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .acne-type-text ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .acne-type-text li {
+      font-size: 16px;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .acne-type-text i {
+      margin-right: 10px;
+      color: #000;
+    }
+
+    .acne-type-text .note {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .acne-type-images {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .acne-type-images img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 5px;
+    }
+
+    .acne-treatment-section {
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .main-heading {
+      font-size: 60px;
+      color: #f0f0f0;
+      text-align: center;
+      font-weight: 800;
+      margin-bottom: 30px;
+    }
+
+    .acne-flex-container {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .acne-images {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .acne-images img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 5px;
+      height: 400px;
+    }
+
+    .acne-description {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ✅ FIXED FONT SIZE: was 0px */
+    .acne-description h2 {
+      font-size: 22px;
+      color: #0096db;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .acne-description ul {
+      list-style: none;
+      padding: 0;
+      font-size: 16px;
+      color: #000;
+    }
+
+    .acne-description li {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .acne-description i {
+      margin-right: 10px;
+      color: #000;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+
+
+    .acne-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 60px;
+  flex-wrap: wrap;
+}
+
+.acne-info {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.acne-info h2 {
+  color: #008CDB;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.acne-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.acne-info ul li {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.result-note {
+  font-size: 14px;
+  color: gray;
+}
+
+.acne-images-box {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 500px;
+}
+
+.acne-images-box img {
+  width: 220px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.cause-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #00A4E4;
+  padding: 40px 60px;
+  color: white;
+}
+
+.cause-details,
+.clinic-contact {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.cause-details h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cause-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cause-details ul li {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.clinic-contact h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.clinic-contact button {
+  display: block;
+  width: fit-content;
+  margin: 10px 0;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.clinic-contact button:hover {
+  background: #e0e0e0;
+}
+
+/* footer  */
+.clinic-footer {
+  background-color: #fff;
+  padding: 40px 60px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-logo-section {
+  max-width: 200px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+.footer-logo-text {
+  font-weight: bold;
+  color: #003366;
+  font-size: 16px;
+  margin: 0;
+}
+
+.social-icons a img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.footer-contact,
+.footer-links,
+.footer-services {
+  flex: 1 1 200px;
+}
+
+.footer-contact h3,
+.footer-links h3,
+.footer-services h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.footer-contact p,
+.footer-contact a,
+.footer-links ul li a,
+.footer-services ul li a {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.footer-contact a:hover,
+.footer-links ul li a:hover,
+.footer-services ul li a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.footer-links ul,
+.footer-services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li,
+.footer-services ul li {
+  margin-bottom: 10px;
+}
+
+/* Highlight first link */
+.footer-services h3 {
+  color: #f87c2c;
+  border-bottom: 1px solid #f87c2c;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* nav  */
+/* ✅ FIX: Nested dropdown (submenu) support */
+ .dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  display: none;
+  position: absolute;
+  border-radius: 0.25rem;
+  background-color: #111; /* Dark grey instead of black */
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+/* Show submenu on hover */
+.dropdown-submenu:hover > .dropdown-menu,
+.dropdown-submenu:focus-within > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu > .dropdown-item {
+  color: #fff !important;
+  background-color: #000 !important;
+  font-weight: 500;
+}
+
+.dropdown-submenu .dropdown-item {
+  color: white !important;
+}
+
+.dropdown-submenu .dropdown-item:hover {
+  background-color: #333 !important;
+  color: #0d6efd !important;
+}
+
+
+
+
+.book-btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 2.5s infinite;
+  z-index: 1;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+.book-btn-glow {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.book-btn-glow:hover {
+  background: linear-gradient(135deg, #000000, #343a40);
+  color: white;
+  box-shadow: 0 0 10px grey;
+  transform: scale(1.05);
+}
+
+.book-btn-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 10%, transparent 10.01%);
+  background-size: 10px 10px;
+  animation: pulse 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.book-btn-glow:hover::after {
+  background: none;
+}
+
+/* NAVBAR LINK STYLING WITHOUT UNDERLINE */
+.navbar-nav .nav-link {
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s ease;
+  text-decoration: none !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d6efd;
+}
+ 
+
+  </style>
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-transparent shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="images/aboutimg1.avif" alt="Logo" width="30" height="30" class="me-2"> <strong>WeCare</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav gap-4">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-house-door-fill"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about"><i class="bi bi-info-circle-fill"></i> About</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-gear-fill"></i> Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="appointment.html">Book Appointment</a></li>
+            <li><a class="dropdown-item" href="medicalcounselling.html">Medical Counselling</a></li>
+            <li><a class="dropdown-item" href="emergencycare.html">Emergency Care</a></li>
+            <li><a class="dropdown-item" href="labreport.html">Lab Reports</a></li>
+            <li><a class="dropdown-item" href="homenursing.html">Home Nursing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="doctorsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-lines-fill"></i> Doctors
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="doctorsDropdown">
+            <li><a class="dropdown-item" href="doctors.html">Pediatricians</a></li>
+            <li><a class="dropdown-item" href="doctors.html">Cardiologists</a></li>
+            <li><a class="dropdown-item" href="doctors.html">Physiotherapists</a></li>
+            <li><a class="dropdown-item" href="doctors.html">Neurologists</a></li>
+            <li><a class="dropdown-item" href="doctors.html">Orthologists</a></li>
+            <li><a class="dropdown-item" href="doctors.html">Dermatologists</a></li>
+          </ul>
+        </li> -->
+
+        <!-- ✅ NEW TREATMENT DROPDOWN STARTS HERE -->
+   <!-- ✅ TREATMENT DROPDOWN -->
+ <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="treatmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    🩺 Treatment
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="treatmentDropdown">
+
+    <!-- Skin Submenu -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">🧴 Skin</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="acne.html">Acne Treatment</a></li>
+        <li><a class="dropdown-item" href="pigmentation.html">Pigmentation</a></li>
+        <li><a class="dropdown-item" href="#">Anti-Aging</a></li>
+        <li><a class="dropdown-item" href="#">Mole/Wart Removal</a></li>
+        <li><a class="dropdown-item" href="#">Skin Brightening</a></li>
+        <li><a class="dropdown-item" href="#">Skin Tightening</a></li>
+        <li><a class="dropdown-item" href="#">Scar Reduction</a></li>
+        <li><a class="dropdown-item" href="#">Laser Treatment</a></li>
+        <li><a class="dropdown-item" href="#">Glow Peel</a></li>
+        <li><a class="dropdown-item" href="#">Dark Circle Treatment</a></li>
+      </ul>
+    </li>
+
+    <!-- Hair Submenu -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">💇‍♀️ Hair</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Hair Fall</a></li>
+        <li><a class="dropdown-item" href="#">Hair Regrowth</a></li>
+        <li><a class="dropdown-item" href="#">Dandruff</a></li>
+        <li><a class="dropdown-item" href="#">Hair PRP</a></li>
+        <li><a class="dropdown-item" href="#">Hair Transplant</a></li>
+        <li><a class="dropdown-item" href="#">Alopecia Treatment</a></li>
+        <li><a class="dropdown-item" href="#">Scalp Detox</a></li>
+        <li><a class="dropdown-item" href="#">Laser Hair Removal</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+
+
+        <!-- ✅ NEW TREATMENT DROPDOWN ENDS HERE -->
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html"><i class="bi bi-envelope-fill"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
+    <div class="ms-lg-3 mt-2 mt-lg-0">
+      <a href="appointment.html" class="book-btn-glow"><i class="bi bi-calendar-plus"></i> Book Appointment</a>
+    </div>
+  </div>
+</nav>
+  <section class="acne-section">
+    <div class="acne-container">
+      <div class="acne-image">
+        <img src="images/acneimage.webp" alt="Acne Treatment Image">
+      </div>
+      <div class="acne-content">
+        <h2>Acne Treatments</h2>
+        <p>
+          Almost everyone suffers from acne at some point. A pimple may be ugly, but not problematic. It’s more annoying when acne covers large areas of the face or doesn’t disappear after puberty (it can even appear after your 30th!)
+        </p>
+        <p>
+          While it’s not proven that acne is caused by eating certain foods, there is a connection. The condition originates when sebaceous glands overproduce excessively, causing pores to become clogged. Our sebaceous glands are driven by hormones, which our nutrition affects. If you delete all sugars from your diet for a while and you’ll often see an improvement. Acne usually happens on the face, neck, chest and back.
+        </p>
+        <p>
+          <strong>Do you suffer from pimples?</strong> Stop acne from becoming a serious skin problem and causing unsightly scars by consulting our professional at Shreem Madhava Skin Care Clinic.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="acne-treatment-section">
+    <h1 class="main-heading">ACNE TREATMENT</h1>
+    <div class="acne-flex-container">
+      <div class="acne-images">
+        <img src="images/acnebefor.webp" alt="Before Acne">
+        <!-- <img src="images/acne-after.jpg" alt="After Acne"> -->
+      </div>
+      <div class="acne-description">
+        <h2>At the places the disorder can appear in the forms of:</h2>
+        <ul>
+          <li><i class="fa-solid fa-user"></i> <strong>Acne vulgaris</strong> (pimples and whiteheads or blackheads)</li>
+          <li><i class="fa-solid fa-user"></i> <strong>Acne keloidalis</strong> (pimples and infections which leave scars)</li>
+          <li><i class="fa-solid fa-user"></i> <strong>Acne conglobata</strong> (serious form which causes large areas of inflammation and scarring)</li>
+        </ul>
+        <p class="note">* results may vary from person to person.</p>
+      </div>
+    </div>
+  </section>
+ 
+
+  <section class="cause-section">
+    <div class="cause-details">
+      <h2>The disorder can have many different causes such as:</h2>
+      <ul>
+        <li>🧬 Hormonal changes during adolescence</li>
+        <li>🧴 Contact with certain substances, such as components of certain cosmetics (make-up, skincare products, shampoo etc.)</li>
+        <li>🌦️ Changes in climate</li>
+        <li>💊 Medication (such as the contraceptive pill, IUDs and other medication)</li>
+        <li>😟 Stress</li>
+        <li>🥗 Nutritional</li>
+        <li>🦠 Intestinal imbalances</li>
+      </ul>
+    </div>
+    <div class="clinic-contact">
+      <h2>For More information, Consulting or Treatment,<br>Contact Sheem Madhava Hair & Skin Clinic</h2>
+      <button class="btn-book">BOOK APPOINTMENT</button>
+      <button class="btn-direction">GET DIRECTIONS</button>
+    </div>
+  </section>
+
+  <footer class="clinic-footer">
+  <div class="footer-container">
+    <!-- Logo and Social -->
+    <div class="footer-logo-section">
+      <img src="images/logo.jpeg" alt="SM Hair & Skin Clinic" class="footer-logo">
+      <p class="footer-logo-text">Hair & Skin Clinic</p>
+      <div class="social-icons">
+        <a href="#"><img src="images/Facebook_logo_(square).png" alt="Facebook"></a>
+        <a href="#"><img src="images/insta.jpeg" alt="Instagram"></a>
+      </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="footer-contact">
+      <h3>Contact us</h3>
+      <p><strong>Address</strong></p>
+      <p><strong>Pondicherry</strong><br>
+      16, 3rd Cross, Anna Nagar, Pondicherry – 605005</p>
+
+      <p><strong>Villupuram</strong><br>
+      No.174, 1st floor, Nehruji road, Villupuram – 605602.<br>
+      Indian Terrain show room back side.<br>
+      Landmark: Near Gandhi statue</p>
+
+      <p><strong>phone</strong><br>
+      <a href="tel:04134900210">0413 4900210</a><br>
+      <a href="tel:+919943608080">+91 9943608080</a><br>
+      <a href="tel:+919629084999">+91 9629084999</a></p>
+
+      <p><strong>E-mail</strong><br>
+      <a href="mailto:info@shreemadhava.com">info@shreemadhava.com</a></p>
+    </div>
+
+    <!-- Our Links -->
+    <div class="footer-links">
+      <h3>Our Links</h3>
+      <ul>
+        <li><a href="#">Dandruff</a></li>
+        <li><a href="#">Hair Fall</a></li>
+        <li><a href="#">Hair Density</a></li>
+        <li><a href="#">Micro Needling – Skin</a></li>
+        <li><a href="#">Micro Follicular Activated PRP</a></li>
+        <li><a href="#">Meso Hair Treatment</a></li>
+        <li><a href="#">Stem Cell – Meso</a></li>
+        <li><a href="#">Hair Fixing Non-Surgical Method</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-services">
+      <h3>Acne</h3>
+      <ul>
+        <li><a href="#">Acne Scar</a></li>
+        <li><a href="#">Eye Care</a></li>
+        <li><a href="#">Laser Hair Removal</a></li>
+        <li><a href="#">Tatoo Removal</a></li>
+        <li><a href="#">Skin Tightening</a></li>
+        <li><a href="#">Advanced Peel</a></li>
+        <li><a href="#">Warts Removal</a></li>
+        <li><a href="#">Pigmentation</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<!-- Bootstrap JS Bundle (Includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
